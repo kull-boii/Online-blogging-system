@@ -17,6 +17,7 @@
 
               if(isset($_POST['submit'])){
               $search = $_POST['search'];
+              $search= str_replace(" ","",$search);
 
               $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%' ";
               $search_query = mysqli_query($connection, $query);
@@ -77,12 +78,6 @@
             <!-- Blog Sidebar Widgets Column -->
             <?php include "includes/sidebar.php"; ?>
                     <!-- /.row -->
-                </div>
-
-                <!-- Side Widget Well -->
-                <div class="well">
-                    <h4>Side Widget Well</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
                 </div>
 
             </div>
