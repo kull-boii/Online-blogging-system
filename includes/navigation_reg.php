@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
+		<!-- Brand and toggle get grouped for better mobile display Responsiveness -->
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				<span class="sr-only">Toggle navigation</span>
@@ -14,7 +14,7 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="#">Popular Categories </a></li>
+				<li><a href="#">Our Most Popular Categories : </a></li>
 			
 			<?php
 				$q = "SELECT post_cat_id, cat_title, count(post_id) AS n
@@ -35,29 +35,10 @@
 			</ul>
 			
 			<ul class="nav navbar-nav navbar-right">
-			<!-- display 'Admin' link only if logged in -->
-			<?php if(isset($_SESSION['role'])):?>
-				<?php if($_SESSION['role'] == 'Administrator'):?>	
-					<li><a href="admin/index.php">Admin</a></li>
-				<?php else:?>
-					<li><a href="admin/profile.php">Admin</a></li>
-				<?php endif;?>
-			<?php endif;?>
-					<li><a href="contact.php">Contact</a></li>
+				<li><a href="contact.php">Contact</a></li>
 			</ul>
 			
 		</div>		<!-- /.navbar-collapse -->
 	</div>		<!-- /.container -->
 </nav>
-
-<!-- Page Content -->
-<div id="main-container" class="container">
-	<div class="row">
-		<!-- Blog Entries Column -->
-		<div class="col-md-8">
-			<a id="h1-title" href="index.php">
-				<h1 class="page-header"><?php echo SITENAME;?><small><?php echo SITESUBTITLE;?></small>
-				</h1>
-			</a>
-
 
